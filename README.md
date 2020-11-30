@@ -19,6 +19,8 @@ It currently looks like...\
 <img src="/src/assets/rm4.png" width="200">
 <img src="/src/assets/rm5.png" width="200">
 
+[Final walkthrough video](https://youtu.be/3GNocPGupNM)
+
 Galvanize Cohort 10/19/2020 - 11/20/2020
 
 Team Amber: Keenan Lawson, Siva Thangavelu, Thomas Mendez, Eugene Kim
