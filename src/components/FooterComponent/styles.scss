@@ -1,0 +1,11 @@
+@import "../../scss/common.styles.scss";
+
+.footerComponent {
+    width: 100%;
+    margin: 0 !important;
+    background: $gray-low-opacity !important;
+    color: $main-2;
+    border: none !important;
+    text-align: right;
+    z-index: 10000;
+}

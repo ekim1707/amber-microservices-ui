@@ -1,0 +1,36 @@
+@import "../../scss/common.styles.scss";
+
+.productsComponent {
+    flex-grow: 1;
+    background: $gray-low-opacity;
+    padding-bottom: 2em;
+    .navButtonContainer {
+        position: fixed;
+        right: 40px;
+        top: 40px;
+        z-index: 1000000000;
+        .primaryNavButton {
+            margin-bottom: 5px !important;
+        }
+    }
+    .productsComponentTitle {
+        margin: 1em;
+        color: $main-2;
+    }
+    .productCardContainer {
+        position: relative;
+        width: fit-content !important;
+        background: $product-card-background-opacity !important;
+        padding: 1em !important;
+        .productCardModelLabel {
+            margin: 1em 0 0 0;
+            padding: .5em;
+            background: $main-2;
+            color: $main-1;
+            text-align: center;
+        }
+    }
+    .productCardContainer:hover {
+        background: $modal-background-opacity !important;
+    }
+}

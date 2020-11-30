@@ -1,0 +1,10 @@
+@import "./variables.scss";
+
+.fontMoneyGreen { color: $money-green !important; }
+
+.fontMagentaPink { color: $magenta-pink !important; }
+
+.primaryNavButton {
+    background: $magenta-pink !important;
+    color: $main-2 !important;
+}

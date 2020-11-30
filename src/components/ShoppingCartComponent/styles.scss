@@ -1,0 +1,38 @@
+@import "../../components/ProductsComponent/styles.scss";
+
+.shoppingCartComponent {
+    @extend .productsComponent;
+    padding: 0 2em;
+    .shoppingCartTitle {
+        @extend .productsComponentTitle;
+    }
+    .cartItemTitle {
+        margin-top: 3em;
+        color: $main-2;
+        text-align: center;
+    }
+    .cartItemContentContainer {
+        display: flex !important;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        .quantityButton {
+            cursor: default;
+            width: 10em;
+            height: 3em;
+            padding: 0;
+            .quantityButtonLabel {
+                color: $semantic-ui-icon-gray;
+            }
+        }
+    }
+    .cartItemSubTotalContainer {
+        display: flex !important;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    .shoppingCartTotalPriceContainer {
+        display: flex;
+        justify-content: center;
+        height: 20em;
+    }
+}

@@ -1,0 +1,351 @@
+@import "../../../scss/common.styles.scss";
+
+.modalComponent {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background: $modal-background-opacity;
+    z-index: 100;
+    .modalContentContainer {
+        width: 90%;
+        height: 90%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        .mainHeaderContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background: $amber-low-opacity;
+            padding: 0 1em;
+            border: none;
+            .headerLogoContainer {
+                display: flex;
+                justify-content: center;
+                width: 20%;
+            }
+            .mainTitle {
+                margin: .5em;
+                color: $main-1;
+            }
+            .buttonContainer {
+                width: 20%;
+                z-index: 1000;
+                .headerButton {
+                    background: $main-2;
+                    border: 1px solid $main-2;
+                }
+                .headerButton.active {
+                    background: $magenta-pink !important;
+                }
+            }
+        }
+        .productDetailsContainer {
+            .productDetailsRow {
+                flex-wrap: nowrap;
+                min-height: 570px;
+                overflow-x: auto;
+                white-space: nowrap;
+                .productImageColumn {
+                    display: inline-block;
+                    height: 100%;
+                    transition: 1s;
+                    white-space: normal;
+                    .productImageContainer {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        .productImageRotateButtonContainer0 {
+                            position: absolute;
+                            left: 15%;
+                            right: initial;
+                            top: 0;
+                            bottom: initial;
+                            transform: rotate(45deg);
+                            z-index: 100000;
+                            cursor: pointer;
+                        }
+                        .productImageRotateButtonContainer0:active ~ .productImage {
+                            transform: rotate3d(-1, -1, -1, 45deg);
+                            transition: transform 1s;
+                        }
+                        .productImageRotateButtonContainer1 {
+                            @extend .productImageRotateButtonContainer0;
+                            left: calc(50% - .715em);
+                            top: 0;
+                            transform: initial;
+                        }
+                        .productImageRotateButtonContainer1:active ~ .productImage {
+                            @extend .productImageRotateButtonContainer0:active;
+                            transform: rotate3d(-1, 0, 0, 45deg);
+                        }
+                        .productImageRotateButtonContainer2 {
+                            @extend .productImageRotateButtonContainer0;
+                            left: initial;
+                            right: 15%;
+                            top: 0;
+                            transform: rotate(-45deg);
+                        }
+                        .productImageRotateButtonContainer2:active ~ .productImage {
+                            @extend .productImageRotateButtonContainer0:active;
+                            transform: rotate3d(-1, 1, 1, 45deg);
+                        }
+                        .productImageRotateButtonContainer3 {
+                            @extend .productImageRotateButtonContainer0;
+                            left: 15%;
+                            right: initial;
+                            top: initial;
+                            transform: initial;
+                        }
+                        .productImageRotateButtonContainer3:active ~ .productImage {
+                            @extend .productImageRotateButtonContainer0:active;
+                            transform: rotate3d(0, -1, 0, 45deg);
+                        }
+                        .productImageRotateButtonContainer4 {
+                            @extend .productImageRotateButtonContainer0;
+                            left: initial;
+                            right: 15%;
+                            top: initial;
+                            transform: initial;
+                        }
+                        .productImageRotateButtonContainer4:active ~ .productImage {
+                            @extend .productImageRotateButtonContainer0:active;
+                            transform: rotate3d(0, 1, 0, 45deg);
+                        }
+                        .productImageRotateButtonContainer5 {
+                            @extend .productImageRotateButtonContainer0;
+                            left: 15%;
+                            right: initial;
+                            top: initial;
+                            bottom: 0;
+                            transform: rotate(-45deg);
+                        }
+                        .productImageRotateButtonContainer5:active ~ .productImage {
+                            @extend .productImageRotateButtonContainer0:active;
+                            transform: rotate3d(1, -1, -1, 45deg);
+                        }
+                        .productImageRotateButtonContainer6 {
+                            @extend .productImageRotateButtonContainer0;
+                            left: calc(50% - .715em);
+                            right: initial;
+                            top: initial;
+                            bottom: -1%;
+                            transform: initial;
+                        }
+                        .productImageRotateButtonContainer6:active ~ .productImage {
+                            @extend .productImageRotateButtonContainer0:active;
+                            transform: rotate3d(1, 0, 0, 45deg);
+                        }
+                        .productImageRotateButtonContainer7 {
+                            @extend .productImageRotateButtonContainer0;
+                            left: initial;
+                            right: 15%;
+                            top: initial;
+                            bottom: 0;
+                        }
+                        .productImageRotateButtonContainer7:active ~ .productImage {
+                            @extend .productImageRotateButtonContainer0:active;
+                            transform: rotate3d(1, 1, 1, 45deg);
+                        }
+                        .productImage {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            transform-style: preserve-3d;
+                            transition: transform 1s;
+                        }
+                    }
+                }
+                .productSpecificationsColumn {
+                    position: relative;
+                    display: inline-block;
+                    height: 100%;
+                    transition: 1s;
+                    white-space: normal;
+                    .productSpecificationsContainer {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: center;
+                        align-items: flex-start;
+                        height: 100%;
+                        .modelLabel {
+                            min-height: 1em;
+                            font-size: 2em;
+                            color: $amber;
+                        }
+                        span {
+                            color: $amber;
+                        }
+                        .cartToggleButton {
+                            height: 3em;
+                            z-index: 1000;
+                        }
+                        .goToCartButton {
+                            @extend .cartToggleButton;
+                            width: 10em;
+                        }
+                        .qrCodeContainer {
+                            display: flex;
+                            margin: 1.5em 0 0 0;
+                            color: $magenta-pink;
+                            font-weight: 700;
+                            .tmoLink {
+                                display: flex;
+                                flex-flow: row wrap;
+                                align-items: center;
+                                width: 7em;
+                                height: 100%;
+                                color: $magenta-pink;
+                            }
+                            label {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 2em;
+                                font-size: 1.25em;
+                            }
+                            .qrCode {
+                                width: 6em;
+                                height: 6em;
+                                margin: 0 1.5em;
+                            }
+                        }
+                        .darkModeToggleButton {
+                            position: absolute;
+                            right: 1em;
+                            top: 0;
+                            border-radius: 50%;
+                            transition: opacity 1s;
+                        }
+                        .lightModeToggleButton {
+                            @extend .darkModeToggleButton;
+                            background: $default-gray-lm;
+                        }
+                    }
+                }
+            }
+        }
+        .reviewsLargeContainer {
+            padding: 0 2em 1em;
+            .reviewsLabelContainer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .reviewsLabel {
+                    min-height: 1em;
+                    margin: 0;
+                    font-size: 2em;
+                }
+            }
+            .createFormContainer {
+                width: 100%;
+                background: transparent;
+                box-shadow: $shadow-dark;
+                .createFormTitleContainer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: .5em;
+                    .createFormTitleInput {
+                        width: 100%;
+                        background: transparent;
+                        border: none;
+                    }
+                }
+                .createFormRatingContainer {
+                    display: flex;
+                    justify-content: stretch;
+                    align-items: center;
+                    padding: .5em;
+                    .createFormRatingInput {
+                        flex-grow: 1;
+                        background: transparent;
+                        border: none;
+                        font-weight: 800;
+                    }
+                }
+                .createFormReviewContainer {
+                    padding: 0 .5em .5em;
+                    .createFormReviewInput {
+                        width: 100%;
+                        background: transparent;
+                        border: none;
+                        border-radius: .28571429rem;
+                    }
+                }
+            }
+            .reviewContainer {
+                @extend .createFormContainer;
+                box-shadow: $semantic-ui-card-shadow;
+                transition: box-shadow 1.5s;
+                .reviewTitleContainer {
+                    @extend .createFormTitleContainer;
+                    background: $amber-low-opacity;
+                    .reviewTitleTextArea {
+                        @extend .createFormTitleInput;
+                    }
+                    .reviewButtonContainer {
+                        button {
+                            margin: 0 .5em;
+                            background: $main-2;
+                            border-radius: 50%;
+                        }
+                        .reviewEditToggleButtonContainer {
+                            display: flex;
+                            flex-flow: column nowrap;
+                            justify-content: space-evenly;
+                            align-items: center;
+                            padding: 3px;
+                            border: 1px solid $main-2;
+                            cursor: pointer;
+                            .reviewEditToggleButton {
+                                position: relative;
+                                width: 40px;
+                                height: 20px;
+                                background: $main-2;
+                                border-radius: 50px;
+                                .reviewEditToggleCircleLeft {
+                                    position: absolute;
+                                    width: 16px;
+                                    height: 16px;
+                                    left: 2px;
+                                    top: 2px;
+                                    background: $semantic-ui-icon-gray-low-opacity;
+                                    border-radius: 50%;
+                                    transform-style: preserve-3d;
+                                    transition: 1.5s;
+                                }
+                                .reviewEditToggleCircleRight {
+                                    @extend .reviewEditToggleCircleLeft;
+                                    left: 22px;
+                                    top: 2px;
+                                    background: $semantic-ui-icon-gray;
+                                }
+                            }
+                        }
+                    }
+                }
+                .reviewRatingContainer {
+                    @extend .createFormRatingContainer;
+                    .reviewRatingTextArea {
+                        @extend .createFormRatingInput;
+                        color: $amber;
+                    }
+                }
+                .reviewDescriptionContainer {
+                    @extend .createFormReviewContainer;
+                    .reviewDescriptionTextArea {
+                        @extend .createFormReviewInput;
+                    }
+                }
+            }
+        }
+    }
+}
